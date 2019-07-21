@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import State_BindMethod from './State_BindMethod';
 import SuperClass from './SuperClass'
+import QATeam from './QATeam';
 
 class Left_Pane extends Component {
     render() {
@@ -16,6 +17,7 @@ class Left_Pane extends Component {
                 <Grid item xs={6}>
                     <Paper style={{padding: '50px'}}>
                       <SuperClass />
+                      <QATeam />
                     </Paper>
                 </Grid>
             </Grid>

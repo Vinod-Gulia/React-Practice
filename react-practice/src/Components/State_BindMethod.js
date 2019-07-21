@@ -38,12 +38,18 @@ class State_BindMethod extends Component {
     }
 
     render() {
+        let subCountMessage
+        if(this.state.subscribeCount > 0 || this.state.unsubscribeCount > 0){
+            subCountMessage = <Fragment>
+                                    <Typography variant='subtitle1' gutterBottom>You have subscribed for {this.state.subscribeCount} times</Typography>
+                                    <Typography variant='subtitle1' gutterBottom>You have unsubscribed for {this.state.unsubscribeCount} times</Typography>
+                              </Fragment>  
+        }
         return (
             <Fragment>
                 <h1>{this.state.message}</h1>
-                <button onClick={this.changeMessageOnSubscribing}>{this.state.buttonText}</button>
-                <Typography variant="subtitle1" gutterBottom>You have subscribed for {this.state.subscribeCount} times</Typography>
-                <Typography variant="subtitle1" gutterBottom>You have unsubscribed for {this.state.unsubscribeCount} times</Typography>
+                <button onClick={this.changeMessageOnSubscribing}>{this.state.buttonText}</button><br/>
+                {subCountMessage}
                 <button onClick={this.resetSubscribes}>Reset subscription data</button>          
             </Fragment>
         );
